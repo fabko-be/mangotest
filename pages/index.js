@@ -1,5 +1,7 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Footer from "../components/footer"
+import Body from "../components/body"
+import Header from "../components/header"
 
 export default function Home() {
   return (
@@ -7,7 +9,9 @@ export default function Home() {
       <Head>
         <title>Mango Download</title>
       </Head>
-      <p>Hello World!</p>
+      <Header />
+      <Body />
+      <Footer />
     </div>
   )
 }
