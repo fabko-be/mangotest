@@ -1,10 +1,96 @@
-.content{
-    background-color: black;
-    padding-bottom: 50px;
-    text-align: center;
-    p{
-        padding-top: 50px;
-        margin-top: 0;
-        color: white;
+@import url('https://pro.fontawesome.com/releases/v5.10.0/css/all.css');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+@keyframes socialHover{
+    from{
+        color: #e8ac17;
+    }
+    to {
+        color: rgba($color: #e8ac17, $alpha: 0.6);
     }
 }
+
+.container{
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 13px;
+    background-color: #0a0a0a;
+    &__content{
+        margin: auto;
+        width: 80%;
+        padding-bottom: 50px;
+        text-align: center;
+        color: #919191;
+        font-weight: 500;
+        padding-top: 20px;
+        line-height: 1.7em;
+            &__citation{
+                display: block;
+                grid-column: span 3;
+                font-style: italic;
+            }
+            &__colonnes{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                margin-top: 2%;
+                text-align: left;
+                &_about{
+                    grid-column: 1;
+                    margin-right: 20%;
+                }
+                &_legals{
+                    grid-column: 2;
+                    margin-bottom: 0;
+                    margin-right: 20%;
+                }
+                &_links{
+                    li{
+                        padding-bottom: 10px;
+                    }
+                    a{
+                        font-size: 14px;
+                        text-decoration: none;
+                        color: #edb059;
+                        &:active{
+                          color: none;
+                        }
+                        &:hover{
+                          color: #edb059;
+                        }
+                        &:visited{
+                          color:none;
+                        }
+                    }
+                    text-decoration: none;
+                    grid-column: 3;
+                }
+            }
+        &__socials{
+            padding-inline-start: 0px;
+            width: 100%;
+            list-style: none;
+            display: inline-flex;
+            justify-content: center;
+            li{
+                a{
+                    font-size: 14px;
+                    text-decoration: none;
+                    color: #e8ac17;
+                    &:active{
+                      color: none;
+                    }
+                    &:hover{
+                      color: rgba($color: #e8ac17, $alpha: 0.6);
+                      animation-name: socialHover;
+                      animation-duration: .6s;
+                    }
+                    &:visited{
+                      color:none;
+                    }
+                }
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
