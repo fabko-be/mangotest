@@ -8,12 +8,19 @@ export default function Header() {
     const [isMobile, setIsMobile] = useState();
     const [firstLoad, setFirstLoad] = useState(true)
 
-    const handleClick = () => {
+    const handleBurgerClick = () => {
         setBurger(!burger);
         setFirstLoad(false);
     }
 
+    const handleToTopFunction = () => {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+
     useEffect(() => {
+
+        const scrollUpButton = document.getElementById("scrollUp");
         
         function handleResize(){
             const winWidth = window.innerWidth;
@@ -27,6 +34,19 @@ export default function Header() {
             }
             return winWidth;
         }
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+                scrollUpButton.classList.remove(style.totophidden);
+                scrollUpButton.classList.add(style.totop);
+            } else {
+                scrollUpButton.classList.remove(style.totop);
+                scrollUpButton.classList.add(style.totophidden);
+            //   scrollUpButton.style.display = "none";
+            }
+          }
         
         handleResize();
         window.addEventListener("resize", handleResize);
@@ -36,7 +56,7 @@ export default function Header() {
     }, [])
 
     return(
-        <div className={style.nav_container}>
+        <header className={style.nav_container}>
             <nav className={style.navbar}>
                 <a href={"#"}>
                     <img src={"https://mango3d.io/wp-content/uploads/2020/08/mango_logo_web2.png"} className={style.navbar__img}></img>
@@ -66,10 +86,11 @@ export default function Header() {
                         <a href={`#`}>News</a>
                     </li>
                 </ul>
-                <div>
-                    <i id="burgerbutton" className={style.navbar__burgericon + " fas fa-bars"} onClick={handleClick}></i>
+                <div className={style.navbar__burgercontainer}>
+                    <i id="burgerbutton" className={style.navbar__burgericon + " fas fa-bars"} onClick={handleBurgerClick}></i>
                 </div>
             </nav>
-        </div>
+            <div id={"scrollUp"} className={style.toTop} onClick={handleToTopFunction}> ^ </div>
+        </header>
     )
 }

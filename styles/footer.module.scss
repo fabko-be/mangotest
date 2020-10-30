@@ -1,12 +1,35 @@
 @import url('https://pro.fontawesome.com/releases/v5.10.0/css/all.css');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
-@keyframes socialHover{
+
+@keyframes burgerOpen{
     from{
-        color: #e8ac17;
+        height: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
     }
+    to{        
+        border-top: solid 2px #edb059;
+        display:block;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        height: 450px;
+
+    }
+}
+
+@keyframes burgerClose{
+    from{
+        height: 450px;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        border-top: solid 2px #edb059;
+    } 
     to {
-        color: rgba($color: #e8ac17, $alpha: 0.6);
+        height: 0px;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        display: none;
     }
 }
 
@@ -34,63 +57,198 @@
                 margin-top: 2%;
                 text-align: left;
                 &_about{
-                    grid-column: 1;
+                    grid-column: span 3;
                     margin-right: 20%;
+                    width: 100%;
                 }
                 &_legals{
-                    grid-column: 2;
+                    grid-column: span 3;
                     margin-bottom: 0;
                     margin-right: 20%;
+                    width: 100%;
                 }
                 &_links{
+                    grid-column: span 3;
+                    text-decoration: none;
+                    color: #333333;
+                    padding-left: 20px;
                     li{
-                        padding-bottom: 10px;
+                        padding-bottom: 5px;
                     }
                     a{
                         font-size: 14px;
                         text-decoration: none;
                         color: #edb059;
                         &:active{
-                          color: none;
+                        color: none;
                         }
                         &:hover{
-                          color: #edb059;
+                        color: #edb059;
                         }
                         &:visited{
-                          color:none;
+                        color:none;
                         }
                     }
-                    text-decoration: none;
-                    grid-column: 3;
                 }
             }
         &__socials{
+            display: block;
+            height: 450px;
+            position: relative;
+            padding-top: 3%;
+            padding-bottom: 3%;
             padding-inline-start: 0px;
             width: 100%;
+            background-color: #383838;
             list-style: none;
-            display: inline-flex;
-            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            border-top: solid 2px #edb059;
+            animation-name: burgerOpen;
+            animation-duration: 1s;
+            overflow: hidden;
             li{
+                padding-left: 10%;
+                padding-top: 2%;
+                padding-bottom: 2%;
                 a{
                     font-size: 14px;
                     text-decoration: none;
                     color: #e8ac17;
+                    transition: .5s;
                     &:active{
-                      color: none;
+                    color: none;
                     }
                     &:hover{
-                      color: rgba($color: #e8ac17, $alpha: 0.6);
-                      animation-name: socialHover;
-                      animation-duration: .6s;
+                    color: rgba($color: #e8ac17, $alpha: 0.6);
+                    opacity: .7;
                     }
                     &:visited{
-                      color:none;
+                    color:none;
                     }
                 }
-                margin-left: 10px;
-                margin-right: 10px;
             }
+            &_fl{
+                display: none;
+            }
+            &_close{
+                display: none;
+                position: relative;
+                border: none;
+                height: 0px;
+                padding-top: 0px;
+                padding-bottom: 0px;
+                padding-inline-start: 0px;
+                width: 100%;
+                background-color: #383838;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                border-top: none;
+                animation-name: burgerClose;
+                animation-duration: 1s;
+                overflow: hidden;
+                li{
+                    padding-left: 10%;
+                    padding-top: 2%;
+                    padding-bottom: 2%;
+                    a{
+                        font-size: 14px;
+                        text-decoration: none;
+                        color: #e8ac17;
+                        &:active{
+                        color: none;
+                        }
+                        &:hover{
+                        color: rgba($color: #e8ac17, $alpha: 0.6);
+                        }
+                        &:visited{
+                        color:none;
+                        }
+                    }
+                }
+            }
+        }
+        &__burgercontainer{
+            :hover{
+                cursor: pointer;
+            }
+        }
+        &__burgericon{
+            display: block;
+            color: #edb059;
         }
     }
 }
 
+@media screen and (min-width: 1025px) {
+    .container{
+        &__content{
+            margin: auto;
+            width: 80%;
+            padding-bottom: 50px;
+            text-align: center;
+            color: #919191;
+            font-weight: 500;
+            padding-top: 20px;
+            line-height: 1.7em;
+                &__citation{
+                    display: block;
+                    grid-column: span 3;
+                    font-style: italic;
+                }
+                &__colonnes{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    margin-top: 2%;
+                    text-align: left;
+                    &_about{
+                        width: auto;
+                        grid-column: 1;
+                        margin-right: 20%;
+                    }
+                    &_legals{
+                        width: auto;
+                        grid-column: 2;
+                        margin-bottom: 0;
+                        margin-right: 20%;
+                    }
+                    &_links{
+                        grid-column: 3;
+                    }
+                }
+            &__socials_desktop{
+                padding-inline-start: 0px;
+                width: 100%;
+                list-style: none;
+                display: inline-flex;
+                justify-content: center;
+                li{
+                    a{
+                        font-size: 14px;
+                        text-decoration: none;
+                        color: #e8ac17;
+                        transition: .5s;
+                        &:active{
+                        color: none;
+                        }
+                        &:hover{
+                        color: rgba($color: #e8ac17, $alpha: 0.6);
+                        opacity: .7;
+                        }
+                        &:visited{
+                        color:none;
+                        }
+                    }
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+            }
+            &__burgericon{
+                display: none;
+            }
+        }
+    }
+}

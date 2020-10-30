@@ -1,8 +1,40 @@
 import style from "../styles/footer.module.scss"
+import React, {useState, useEffect} from "react"
 
 export default function Footer(){
+
+    const [burger, setBurger] = useState(false);
+    const [isMobile, setIsMobile] = useState();
+    const [firstLoad, setFirstLoad] = useState(true)
+
+    const handleClick = () => {
+        setBurger(!burger);
+        setFirstLoad(false);
+    }
+
+    useEffect(() => {
+        
+        function handleResize(){
+            const winWidth = window.innerWidth;
+            if(winWidth >= 1025){
+                setIsMobile(false)
+                setBurger(false)
+                setFirstLoad(true)
+            } else {
+                setIsMobile(true)
+                setBurger(false)
+            }
+            return winWidth;
+        }
+        
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, [])
+
     return (
-        <div className={style.container}>
+        <footer className={style.container}>
             <div className={style.container__content}>
                 <div className={style.container__content__citation}>
                     <p>
@@ -26,16 +58,19 @@ export default function Footer(){
                         <li><a href={"#"}>Terms and Conditions</a></li>
                     </ul>
                 </div>
-                <ul className={style.container__content__socials}>
-                        <li><a href={"#"}><i class="fab fa-discord fa-3x"></i></a></li>
-                        <li><a href={"#"}><i class="fab fa-instagram fa-3x"></i></a></li>
-                        <li><a href={"#"}><i class="fab fa-twitter fa-3x"></i></a></li>
-                        <li><a href={"#"}><i class="fab fa-facebook-f fa-3x"></i></a></li>
-                        <li><a href={"#"}><i class="fab fa-facebook-square fa-3x"></i></a></li>
-                        <li><a href={"#"}><i class="fab fa-youtube fa-3x"></i></a></li>
-                        <li><a href={"#"}><i class="fas fa-rss fa-3x"></i></a></li>
+                <div className={style.container__content__burgercontainer}>
+                    <i style={{display: !isMobile? "none" : ""}}  className={style.container__content__burgericon + " fas fa-bars"} onClick={handleClick}></i>
+                </div>
+                <ul className={isMobile? firstLoad? style.container__content__socials_fl : !burger? style.container__content__socials_close : style.container__content__socials : style.container__content__socials_desktop}>
+                        <li><a href={"#"}><i class="fab fa-discord fa-2x"></i></a></li>
+                        <li><a href={"#"}><i class="fab fa-instagram fa-2x"></i></a></li>
+                        <li><a href={"#"}><i class="fab fa-twitter fa-2x"></i></a></li>
+                        <li><a href={"#"}><i class="fab fa-facebook-f fa-2x"></i></a></li>
+                        <li><a href={"#"}><i class="fab fa-facebook-square fa-2x"></i></a></li>
+                        <li><a href={"#"}><i class="fab fa-youtube fa-2x"></i></a></li>
+                        <li><a href={"#"}><i class="fas fa-rss fa-2x"></i></a></li>
                 </ul>
             </div>
-        </div>
+        </footer>
     )
 }

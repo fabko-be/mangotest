@@ -40,6 +40,69 @@
     }
 }
 
+@keyframes toTopPop{
+    from{
+        right: -40px;
+    }
+    to{
+        right: 0px;
+    }
+}
+
+@keyframes toTopDepop{
+    from{
+        right: 0px;
+    }
+    to{
+        right: -40px;
+    }
+}
+
+.totop{
+    display: block;
+    position: fixed; 
+    text-align: center;
+    padding-top: 10px;
+    bottom: 200px; 
+    right: 0px; 
+    width: 40px;
+    height: 40px;
+    z-index: 99; 
+    background-color: rgba($color: #000000, $alpha: .4); 
+    color: white; 
+    cursor: pointer; 
+    border-radius: 10px 0 0 10px; 
+    font-size: 18px;
+    user-select: none;
+    animation-name: toTopPop;
+    animation-duration: .5s;
+    :hover{
+        cursor: pointer;
+    }
+}
+
+.totophidden{
+    display: block;
+    position: fixed;
+    text-align: center;
+    padding-top: 10px;
+    bottom: 200px; 
+    right: -40px; 
+    width: 40px;
+    height: 40px;
+    z-index: 99;
+    background-color: rgba($color: #000000, $alpha: .4);
+    color: white;
+    cursor: pointer; 
+    border-radius: 10px 0 0 10px; 
+    font-size: 18px; 
+    user-select: none;
+    animation-name: toTopDepop;
+    animation-duration: .5s;
+    :hover{
+        cursor: pointer;
+    }
+}
 
 .nav_container{
     z-index: 99999;
@@ -83,7 +146,6 @@
         animation-name: burgerOpen;
     }
     &__ul_close{
-        // display: none;
         position: fixed;
         padding-top: 0%;
         padding-bottom: 0%;
@@ -105,7 +167,6 @@
         animation-name: burgerClose;
     }
     &__ul_fl{
-        // display: none;
         position: fixed;
         padding-top: 0%;
         padding-bottom: 0%;
@@ -126,7 +187,6 @@
     }
     &__li{
         margin-top: 25px;
-        // display: block;
         margin-left: 10%;
         margin-right: 20px;
         list-style: none;
@@ -138,11 +198,12 @@
         a{
             text-decoration: none;
             color: white;
+            transition: .5s;
             &:active{
               color: none;
             }
             &:hover{
-              color: #bbbbbb;
+              opacity: .7;
             }
             &:visited{
               color:none;
@@ -161,6 +222,11 @@
         }
         li:hover{
             color: #bbbbbb;
+        }
+    }
+    &__burgercontainer{
+        :hover{
+            cursor: pointer;
         }
     }
     &__burgericon{
@@ -230,14 +296,15 @@
         a{
             text-decoration: none;
             color: white;
+            transition: .5s;
             &:active{
               color: none;
             }
             &:hover{
-              color: #bbbbbb;
+                opacity: .7;
             }
             &:visited{
-              color:none;
+                color:none;
             }
         }
     }
@@ -262,17 +329,15 @@
         z-index: 1;
         animation-name: dropDownMenu;
         animation-duration: .4s;
-        .dropdown_controller:hover ul{
-            display: block;
-        }
         li{
             color: white;
             list-style: none;
             text-align: left;
             margin-bottom: 20px;
+            transition: .5s;
         }
         li:hover{
-            color: #bbbbbb;
+            opacity: .7;
         }
     }
     &__burgericon{
