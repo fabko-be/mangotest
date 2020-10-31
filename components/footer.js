@@ -62,13 +62,13 @@ export default function Footer(){
                     <i style={{display: !isMobile? "none" : ""}}  className={style.container__content__burgericon + " fas fa-bars"} onClick={handleClick}></i>
                 </div>
                 <ul className={isMobile? firstLoad? style.container__content__socials_fl : !burger? style.container__content__socials_close : style.container__content__socials : style.container__content__socials_desktop}>
-                        <li><a href={"#"}><i class="fab fa-discord fa-2x"></i></a></li>
-                        <li><a href={"#"}><i class="fab fa-instagram fa-2x"></i></a></li>
-                        <li><a href={"#"}><i class="fab fa-twitter fa-2x"></i></a></li>
-                        <li><a href={"#"}><i class="fab fa-facebook-f fa-2x"></i></a></li>
-                        <li><a href={"#"}><i class="fab fa-facebook-square fa-2x"></i></a></li>
-                        <li><a href={"#"}><i class="fab fa-youtube fa-2x"></i></a></li>
-                        <li><a href={"#"}><i class="fas fa-rss fa-2x"></i></a></li>
+                        <li><a href={"#"}><i className="fab fa-discord fa-2x"></i></a></li>
+                        <li><a href={"#"}><i className="fab fa-instagram fa-2x"></i></a></li>
+                        <li><a href={"#"}><i className="fab fa-twitter fa-2x"></i></a></li>
+                        <li><a href={"#"}><i className="fab fa-facebook-f fa-2x"></i></a></li>
+                        <li><a href={"#"}><i className="fab fa-facebook-square fa-2x"></i></a></li>
+                        <li><a href={"#"}><i className="fab fa-youtube fa-2x"></i></a></li>
+                        <li><a href={"#"}><i className="fas fa-rss fa-2x"></i></a></li>
                 </ul>
             </div>
         </footer>

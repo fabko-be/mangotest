@@ -18,7 +18,7 @@
     from{
         height: 550px;
         display:block;
-        border-top: solid 2px #edb059;
+        border-top: solid 3px #edb059;
         padding-top: 3%;
         padding-bottom: 3%;
     }
@@ -103,23 +103,35 @@
         cursor: pointer;
     }
 }
-
-.nav_container{
-    z-index: 99999;
+.invisible{
+    display: none;
+}
+.header{
     position: fixed;
     top: 0px;
+    width: 100%;
+    min-height: 80px;
+    background-color: #383838;
+    z-index: 99999;
+}
+.nav_container{
+    max-width: 1600px;
     width: 100%;
     background-color: #383838;
 }
 .navbar{
     display: flex;
     margin-left: 10%;
-    width: 80%;
+    width: 50%;
+    height: 80px;
     text-align: left;
     align-items: center;
+    vertical-align: middle;
     &__img {
-        max-height: 50px;
-        max-width: 75%;
+        // max-height: 50px;
+        width: 100%;
+        max-height: 65%;
+        height: auto;
         margin-top: 10px;
         margin-bottom: 10px;
     }
@@ -128,9 +140,9 @@
         position: fixed;
         padding-top: 3%;
         padding-bottom: 3%;
-        top: 62px;
+        top: 80px;
         background-color: #383838;
-        border-top: solid 2px #edb059;
+        border-top: solid 3px #edb059;
         margin-block-start: 0;
         margin-block-end: 0;
         margin-inline-start: 0px;
@@ -149,7 +161,7 @@
         position: fixed;
         padding-top: 0%;
         padding-bottom: 0%;
-        top: 62px;
+        top: 80px;
         background-color: #383838;
         border: none;
         margin-block-start: 0;
@@ -170,7 +182,7 @@
         position: fixed;
         padding-top: 0%;
         padding-bottom: 0%;
-        top: 62px;
+        top: 80px;
         background-color: #383838;
         border: none;
         margin-block-start: 0;
@@ -231,7 +243,7 @@
     }
     &__burgericon{
         position: absolute;
-        top: 22px;
+        top: 30px;
         right: 10%;
         display: block;
         color: #edb059;
@@ -244,36 +256,39 @@
     display:block;
 }
 .nav_container{
-    z-index: 99999;
-    position: fixed;
-    top: 0px;
+    height: 80px;
     width: 100%;
     background-color: #383838;
 }
 .navbar{
     display: flex;
-    margin-left: 10%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80px;
     width: 80%;
     text-align: left;
     align-items: center;
+    justify-content: space-between;
     &__img {
-        max-width: 100%;
-        max-height: 50px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        // max-height: 50px;
+        width: auto;
+        max-height: 65%;
+        height: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
     &__ul_desktop{
         position: relative;
-        top: 0px;
+        height: 80px;
         border: none;
         padding-top: 0px;
+        padding-bottom: 0px;
         margin-block-start: 0;
         margin-block-end: 0;
         margin-inline-start: 0px;
         margin-inline-end: 0px;
         padding-inline-start: 0;
-        justify-self: end;
-        display: block;
         width: 100%;
         flex-wrap: wrap;
         text-align: right;
@@ -282,15 +297,15 @@
         animation-name: none;
     }
     &__li{
-        margin-top: 25px;
+        margin-top: 30px;
         display: inline-block;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 25px;
+        margin-right: 0px;
         list-style: none;
         color: white;
         font-family: 'Montserrat', Helvetica, Arial, Lucida, sans-serif;
         font-size: 18px;
-        font-weight: 500;
+        font-weight: 600;
         cursor: pointer;
         height: 25px;
         a{
@@ -311,17 +326,26 @@
     &__dropdown_controller{
         position: relative;
         height: 50px;
+        &_icon{
+            margin-left: 10px;
+            font-family: "Font Awesome 5 Pro";
+            transition: .5s;
+        }
     }
     &__dropdown_controller:hover{
         .navbar__dropdown{
             display: block;
         }
+        .navbar__dropdown_controller_icon{
+            opacity: .7;
+            transition: .5s;
+        }
     }
     &__dropdown{
         display: none;
-        margin-top: 28px;
+        margin-top: 27px;
         margin-left: 0px;
-        border-top: 2px solid orange;
+        border-top: 3px solid orange;
         position: absolute;
         background-color: #383838;
         min-width: 250px;
@@ -329,6 +353,7 @@
         z-index: 1;
         animation-name: dropDownMenu;
         animation-duration: .4s;
+
         li{
             color: white;
             list-style: none;

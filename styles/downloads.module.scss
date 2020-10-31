@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+.container{
+    background-color: white;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    font-family: "Open Sans",Arial, sans-serif;
+    max-width: 1600px;
+}
+
+.top{
+    margin-top: 100px;
+    &__image{
+        margin-top: 20px;
+        max-width: 100%;
+        max-height: 100px;
+        margin-bottom: 10px;
+    }
+    &__title{
+        font-family: "Comfortaa", display;
+        text-align: center;
+        color: #141414;
+        &_main{
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 38px;
+            padding-bottom: 5px;
+        }
+        &_sub{
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: 600;
+            font-size: 19px;
+            padding-bottom: 20px;
+        }
+    }
+    &__details{
+        line-height: 1.7em;
+        font-weight: 500;
+        color: #666;
+        font-size: 14px;
+    }
+}
+.tablecontainer{
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    justify-content: space-between;
+    min-width: 100%;
+    max-width: 100%;
+    &__table{
+        display: flex;
+        flex-direction: column;
+        background-color: #f2f2f2;
+        min-width: 48.5%;
+        padding-bottom: 45px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+        &__title{
+            color: #666;
+            line-height: 1.7em;
+            font-size: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 1px solid black;
+            padding-top: 16px !important;
+            padding-bottom: 16px !important;
+            margin-bottom: 3.093%;
+        }
+        &__buttoncontainer{
+            &__button{
+                display: block;
+                margin-bottom: 3%;
+                font-size: 30px;
+                &_link{
+                    line-break: loose;
+                    position: relative;
+                    line-height: 1.7em;
+                    text-align: center;
+                    display: inline-block;
+                    line-height: 1.7em;
+                    max-width: 80%;
+                    height: 100%;
+                    font-weight: 500;
+                    position: relative;
+                    color: white;
+                    border: 2px solid;
+                    border-radius: 3px;
+                    border-width: 0px;
+                    padding-top: 18px;
+                    padding-bottom: 18px;
+                    padding-left: 53px;
+                    padding-right: 53px;
+                    background-color: #EA647F;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+}
+}
+
+.iframe{
+    margin-top: 150px;
+}

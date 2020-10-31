@@ -6,9 +6,7 @@ import Header from "../components/header"
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>Mango Download</title>
-      </Head>
+      <Head/>
       <Header />
       <Body />
       <Footer />
