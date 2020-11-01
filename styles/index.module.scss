@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.container{
+    background-color: white;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    font-family: "Open Sans",Arial, sans-serif;
+    max-width: 1600px;
+    padding-bottom: 40px;
+}
+
+.top{
+    background-image: url("../public/all_printers_lychee.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 80px;
+    padding-top: 32px;
+    padding-bottom: 39px;
+    color: white;
+    text-align: center;
+    font-family: "Montserrat", Helvetica, Arial, Lucida, sans-serif;
+    text-transform: uppercase;
+    line-height: 1.3em;
+    &__image{
+        margin-top: 20px;
+        max-width: 100%;
+        max-height: 140px;
+        margin-bottom: 10px;
+    }
+    h1{
+        font-size: 63px;
+        font-weight: 500;
+        padding-bottom: 10px;
+        margin-top: 15px;
+    }
+    h2{
+        font-size: 23px;
+        margin-top: 60px;
+        font-weight: 500;
+    }
+}

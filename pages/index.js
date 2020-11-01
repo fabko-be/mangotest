@@ -1,15 +1,17 @@
 import React from "react";
 import Head from "next/head";
 import Footer from "../components/footer";
-import Body from "../components/body";
+import Top from "../components/index/top";
 import Header from "../components/header";
+import style from "../styles/index.module.scss";
 
 export default function Home() {
     return (
         <div>
             <Head />
             <Header />
-            <Body />
+            <Top />
+            <div className={style.container} />
             <Footer />
         </div>
     );
