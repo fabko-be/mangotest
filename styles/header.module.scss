@@ -256,7 +256,6 @@
     display:block;
 }
 .nav_container{
-    height: 80px;
     width: 100%;
     background-color: #383838;
 }
@@ -265,7 +264,7 @@
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
-    height: 80px;
+    height: auto;
     width: 80%;
     text-align: left;
     align-items: center;
