@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Top from "../components/downloads/top";
@@ -12,10 +13,12 @@ export default function Downloads(props) {
 
     return (
         <div>
-            <title>
-                {`Download the latest version of Lychee Slicer 3 for SLA/Resin 3D
-                Printers`}
-            </title>
+            <Head>
+                <title>
+                    {`Download the latest version of Lychee Slicer 3 for SLA/Resin 3D
+                    Printers`}
+                </title>
+            </Head>
             <Header />
             <div className={style.container}>
                 <Top />
