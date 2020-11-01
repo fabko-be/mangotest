@@ -10,6 +10,9 @@ import Link from "next/link"
 
 
 export default function Downloads(props) {
+    const fullName = props.lychee.name.en;
+    const name = fullName.replace(" ", "");
+    console.log(name)
 
     return(
         <div>
@@ -18,8 +21,8 @@ export default function Downloads(props) {
             <div  className={style.container}>
                 <Top/>
                 <div className={style.tablecontainer}>
-                    <Table/>
-                    <Table/>
+                    <Table version={`Stable - current version: ${props.lychee.url.latest}`} nummber={props.lychee.url.latest}/>
+                    <Table version={`Public beta - curent version: ${props.lychee.url.beta}`}/>
                 </div>
                 <Iframe />
             </div>
@@ -32,6 +35,7 @@ Downloads.getInitialProps= async() => {
 
     const res = await fetch(`https://api.mango3d.io/applications/a8ee1146-8d03-4b69-8a67-59009a3f9ee7`);
     const data = await res.json();
+    console.log(data);
     return {lychee: data}
     }
 

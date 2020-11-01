@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+// @import url('https://free.fontawesome.com/releases/v5.10.0/css/all.css');
 
 .container{
     background-color: white;
@@ -50,23 +51,24 @@
     }
 }
 .tablecontainer{
-    display: inline-flex;
-    flex-wrap: wrap;
+    // display: inline-flex;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
     margin-top: 50px;
     justify-content: space-between;
     min-width: 100%;
-    max-width: 100%;
     &__table{
         display: flex;
         flex-direction: column;
         background-color: #f2f2f2;
-        min-width: 48.5%;
+        width: 97%;
         padding-bottom: 45px;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 50px;
         &__title{
-            color: #666;
+            color: #2D2D2D;
             line-height: 1.7em;
             font-size: 25px;
             font-weight: 700;
@@ -82,13 +84,14 @@
                 margin-bottom: 3%;
                 font-size: 30px;
                 &_link{
-                    line-break: loose;
+                    overflow: hidden;
                     position: relative;
                     line-height: 1.7em;
+                    text-decoration: none;
                     text-align: center;
                     display: inline-block;
                     line-height: 1.7em;
-                    max-width: 80%;
+                    width: 60%;
                     height: 100%;
                     font-weight: 500;
                     position: relative;
