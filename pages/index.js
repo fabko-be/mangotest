@@ -5,6 +5,8 @@ import Top from "../components/index/top";
 import Header from "../components/shared/header";
 import Overview from "../components/index/overview";
 import Industries from "../components/index/industries";
+import Support from "../components/index/support";
+import Rtoperations from "../components/index/rtoperations";
 
 export default function Home() {
     return (
@@ -14,6 +16,8 @@ export default function Home() {
             <Top />
             <Overview />
             <Industries />
+            <Support />
+            <Rtoperations />
             <Footer />
         </div>
     );

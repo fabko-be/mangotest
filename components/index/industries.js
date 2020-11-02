@@ -57,7 +57,6 @@ const Industries = () => (
                 />
             </div>
         </div>
-        <div className={style.industries__divider} />
     </section>
 );
 export default Industries;
