@@ -16,7 +16,7 @@ Ensuite lancer l'application en local
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
 ```
 
