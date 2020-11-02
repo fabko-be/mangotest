@@ -2,16 +2,21 @@ import style from "../../styles/footer.module.scss";
 import React, {useState, useEffect} from "react";
 
 export default function Footer() {
+    // Déclaration des states au premier rendu
     const [burger, setBurger] = useState(false);
     const [isMobile, setIsMobile] = useState();
     const [firstLoad, setFirstLoad] = useState(true);
 
+    // Fonction sur le click de l'icone burger
+    // Basculement des states
     const handleClick = () => {
         setBurger(!burger);
         setFirstLoad(false);
     };
 
     useEffect(() => {
+        // Déclaration de la fonction de basculement des states en fonction de la taille du viewport
+        // Renvoie la largeur de celui-ci
         function handleResize() {
             const winWidth = window.innerWidth;
             if (winWidth >= 1025) {
@@ -24,10 +29,11 @@ export default function Footer() {
             }
             return winWidth;
         }
-
+        // Appel de la fonction au premier rendu pour pouvoir basculer automatiquement les states au besoin en fonction de la taille de l'écran
         handleResize();
+        // Event listener sur le DOM, lance la fonction au changement de taille
         window.addEventListener("resize", handleResize);
-
+        // Clean du listener après chaque resize
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
@@ -81,6 +87,13 @@ export default function Footer() {
                     />
                 </div>
                 <ul
+                    // J'étais fatigué !!!
+                    // Mais en gros, si je suis sur une fenêtre plus petite que 1025px ET que c'est le premier chargement alors
+                    // Appliqué la class container__content__socials_fl
+                    // si ce n'est pas le premier chargement et que le burger est fermé alors appliquer la class container__content__socials_close
+                    // Si burger est ouvert charger la class container__content__socials
+                    // et si on n'est pas sur mobile alors charger la classe container__content__socials_desktop
+                    // Au final, c'est easy \o/
                     className={
                         isMobile
                             ? firstLoad

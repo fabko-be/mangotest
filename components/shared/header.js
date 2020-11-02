@@ -43,7 +43,8 @@ export default function Header() {
             return winWidth;
         }
 
-        // déclaration de la fonction pour basculement des class suivant la position de la fenêtre si le scroll est actif
+        // déclaration de la fonction pour basculement des class suivant la position de la fenêtre
+        // Activera ou non le bouton pour remonter au dessus de la fenêtre à partir d'un certains niveau de "scroll"
         function scrollFunction() {
             if (
                 document.body.scrollTop > 30 ||
@@ -63,11 +64,11 @@ export default function Header() {
         };
 
         setPath(router.pathname);
-        // Premier chargement des state au chargement de la page
+        // Appel de la fonction au premier rendu pour pouvoir basculer automatiquement les states au besoin en fonction de la taille de l'écran
         handleResize();
         // Lancement de la fonction sur la fenêtre change de taille
         window.addEventListener("resize", handleResize);
-
+        // Clean du listener après chaque resize
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
@@ -86,6 +87,12 @@ export default function Header() {
                 {/* Il était un peu tard !!! */}
                 <ul
                     className={
+                        // Si je suis sur une fenêtre plus petite que 1025px ET que c'est le premier chargement alors
+                        // Appliqué la class navbar__ul_fl
+                        // si ce n'est pas le premier chargement et que le burger est fermé alors appliquer la class navbar__ul_close
+                        // Si burger est ouvert charger la class navbar__ul
+                        // et si on n'est pas sur mobile alors charger la classe navbar__ul_desktop
+                        // Au final, c'est easy \o/
                         isMobile
                             ? firstLoad
                                 ? style.navbar__ul_fl
@@ -170,7 +177,6 @@ export default function Header() {
                 {" "}
                 {`^`}{" "}
             </div>
-            {/* </div> */}
         </header>
     );
 }

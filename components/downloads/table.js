@@ -2,6 +2,15 @@ import React from "react";
 import Button from "../../components/shared/button";
 import style from "../../styles/downloads.module.scss";
 
+// Table component / Downloads
+//-------------------------
+// Props
+//_________________________
+// version : La version du logiciel
+// name : Le nom du logiciel
+// dlversion : la version a télécharger
+//-------------------------
+
 const icon = (
     <i className={"fas fa-cloud-download-alt"} style={{paddingRight: "10px"}} />
 );

@@ -8,6 +8,7 @@ import Table from "../components/downloads/table";
 import style from "../styles/downloads.module.scss";
 
 export default function Downloads(props) {
+    // Concaténation du nom de l'application
     const fullName = props.lychee.name.en;
     const name = fullName.replace(" ", "");
 
@@ -51,10 +52,13 @@ export default function Downloads(props) {
     );
 }
 
-Downloads.getInitialProps = async () => {
+// Chargement des props du la page depuis l'API fournie par Mango 3D
+// SSR par getInitialProps
+
+export async function getServerSideProps() {
     const res = await fetch(
         `https://api.mango3d.io/applications/a8ee1146-8d03-4b69-8a67-59009a3f9ee7`,
     );
     const data = await res.json();
-    return {lychee: data};
-};
+    return {props: {lychee: data}};
+}
