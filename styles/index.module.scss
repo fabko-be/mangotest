@@ -94,7 +94,6 @@
         }
     }
 }
-
 .overview{
     background-color: #e2e2e2!important;
     padding-top: 50px;
@@ -189,7 +188,70 @@
         height: 87px;
     }
 }
-
+.industries{
+    padding-top: 80px;
+    padding-bottom: 50px;
+    width: 100%;
+    &__container{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        &__details{
+            padding: 17px 0;
+            &_title{
+                color: #141414;
+                line-height: 1em;
+                font-weight: 500;
+                text-align: center;
+                font-family: Montserrat,Helvetica,Arial,Lucida,sans-serif;
+                padding-bottom: 10px;
+                // font-size: 37px;
+                font-size: 24px;
+            }
+            &_text{
+                font-family: Open Sans,Arial,sans-serif;
+                font-size: 16px;
+                color: #2D2D2D;
+                font-weight: 500;
+                line-height: 1.7em;
+                text-align: center;
+            }
+        }
+        &__gallery{
+            display: grid;
+            grid-template-columns: 1;
+            &__imagecontainer{
+                grid-column: 1;
+                margin-inline-start: 0;
+                margin-inline-end: 0;
+                img{
+                    width: 100%;
+                }
+                figcaption{
+                    font-family: Open Sans,Arial,sans-serif;
+                    text-align: right;
+                    font-size: 10px;
+                    color: #303030;
+                    padding-bottom: 8px;
+                    a{
+                        text-decoration: none;
+                        color: #EDB059;
+                    }
+                }
+                h3{
+                    font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;
+                    font-size: 20px;
+                    font-weight: 500;
+                    text-align: center;
+                    padding-top: 7px;
+                    padding-bottom: 10px;
+                    margin-block-start: 0;
+                    margin-block-end: 0;
+                }
+            }
+        }
+    }
+}
 @media screen and (min-width: 768px) {
     .top{
         background-size: cover;
@@ -220,6 +282,36 @@
             }
         }
     }
+    .industries{
+        &__container{
+            &__details{
+                padding: 17px 0;
+            }
+            &__gallery{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                :nth-child(2n+1){
+                    margin-right: 15px;
+                }
+                :nth-child(2n){
+                    margin-left: 15px;
+                }
+                &__imagecontainer{
+                    grid-column: auto;
+                    figcaption{
+                        a{
+                            margin-right: 0px!important;
+                            margin-left: 0px!important;
+                        }
+                    }
+                    h3{
+                        margin-right: 0px!important;
+                        margin-left: 0px!important;
+                    }
+                }
+            }
+        }
+    }
 }
 @media screen and (min-width: 1025px) {
 .top{
@@ -246,6 +338,40 @@
         &__buttoncontainer{
             &_button{
                 font-size: 31px;
+            }
+        }
+    }
+}
+.industries{
+    &__container{
+        &__details{
+            padding: 17px 0;
+                &_title{
+                    font-size: 37px;
+                }
+            }
+        &__gallery{
+            display: grid;
+            grid-gap: 50px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            :nth-child(2n+1){
+                margin-right: 0px;
+            }
+            :nth-child(2n){
+                margin-left: 0px;
+            }
+            &__imagecontainer{
+                grid-column: auto;
+                figcaption{
+                    a{
+                        margin-right: 0px!important;
+                        margin-left: 0px!important;
+                    }
+                }
+                h3{
+                    margin-right: 0px!important;
+                    margin-left: 0px!important;
+                }
             }
         }
     }

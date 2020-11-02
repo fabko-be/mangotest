@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../shared/button";
+import Figure from "../shared/figure";
 import style from "../../styles/index.module.scss";
 
 const Overview = () => (
@@ -14,22 +15,17 @@ const Overview = () => (
                 </p>
             </div>
             <div className={style.overview__container__presentation}>
-                <figure
-                    className={
+                <Figure
+                    style={
                         style.overview__container__presentation__imagecontainer
-                    }>
-                    <img
-                        src={
-                            "https://mango3d.io/wp-content/uploads/2020/08/lychee-slicer-overview-interface.png"
-                        }
-                    />
-                    <figcaption>
-                        {`3D model : `}
-                        <a href={"https://www.patreon.com/ArtisanGuild"}>
-                            {`Artisan Guild`}
-                        </a>
-                    </figcaption>
-                </figure>
+                    }
+                    imgsource={
+                        "https://mango3d.io/wp-content/uploads/2020/08/lychee-slicer-overview-interface.png"
+                    }
+                    captiontext={"3D Model : "}
+                    captionlink={"https://www.patroen.com/ArtisanGuild"}
+                    captionlink_text={"Artisan Guild"}
+                />
                 <div
                     className={
                         style.overview__container__presentation__textcontainer
