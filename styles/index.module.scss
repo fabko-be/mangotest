@@ -14,16 +14,6 @@
     }
 }
 
-.container{
-    background-color: white;
-    text-align: center;
-    width: 80%;
-    margin: auto;
-    font-family: "Open Sans",Arial, sans-serif;
-    max-width: 1600px;
-    padding-bottom: 40px;
-}
-
 .top{
     background-image: url("../public/all_printers_lychee.jpg");
     background-repeat: no-repeat;
@@ -105,6 +95,78 @@
     }
 }
 
+.overview{
+    background-color: #e2e2e2!important;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    font-family: "Open Sans",Arial, sans-serif;
+    &__container{
+        width: 80%;
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+        &__details{
+            color: #2D2D2D;
+            font-size: 17px;
+            text-align: center;
+            padding-bottom: 20px;
+            &_text{
+                margin-block-start: 0;
+                font-weight: 500;
+            }
+        }
+        &__presentation{
+            display: grid;
+            grid-template-columns: 1fr;
+            padding-top: 9px;
+            margin-top: 31px;
+            &__imagecontainer{
+                grid-column: 1;
+                margin-inline-start: 0;
+                margin-inline-end: 0;
+                img{
+                    width: 100%;
+                }
+                figcaption{
+                    text-align: right;
+                    font-size: 12px;
+                    color: #303030;
+                    a{
+                        text-decoration: none;
+                        color: #EDB059;
+                    }
+                }
+            }
+            &__textcontainer{
+                margin-left: 0;
+                margin-right: 0;
+                height: 100%;
+                padding-top: 1em;
+                &__sub{
+                    margin-bottom: 6%;
+                    &_title{
+                        margin-block-start: 0;
+                        margin-block-end: 0;
+                        padding-bottom: 10px;
+                        color: #141414;
+                        font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+                    &_content{
+                        color: #2D2D2D;
+                        margin-block-start: 0;
+                        margin-block-end: 0;
+                        line-height: 1.7em;
+                        font-size: 15px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 1025px) {
 .top{
     background-size: cover;
@@ -113,6 +175,16 @@
         &__buttoncontainer{
             display: flex;
             margin-bottom: 0;
+        }
+    }
+}
+.overview{
+    &__container{
+        &__presentation{
+            grid-template-columns: 67% 33%;
+            &__imagecontainer{
+                margin-right: 8%
+            }
         }
     }
 }

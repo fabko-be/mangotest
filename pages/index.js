@@ -3,7 +3,7 @@ import Head from "next/head";
 import Footer from "../components/shared/footer";
 import Top from "../components/index/top";
 import Header from "../components/shared/header";
-import style from "../styles/index.module.scss";
+import Overview from "../components/index/overview";
 
 export default function Home() {
     return (
@@ -11,7 +11,7 @@ export default function Home() {
             <Head />
             <Header />
             <Top />
-            <div className={style.container} />
+            <Overview />
             <Footer />
         </div>
     );
