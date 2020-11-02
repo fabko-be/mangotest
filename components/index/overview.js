@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../shared/button";
 import style from "../../styles/index.module.scss";
 
 const Overview = () => (
@@ -120,7 +121,14 @@ const Overview = () => (
                     </div>
                 </div>
             </div>
+            <Button
+                container_style={style.overview__container__buttoncontainer}
+                style={style.overview__container__buttoncontainer_button}
+                icon={<i className={"fal fa-search"} />}
+                content={`What's new in Lychee Slicer 3`}
+            />
         </div>
+        <div className={style.overview__divider} />
     </section>
 );
 
