@@ -122,6 +122,7 @@ const Overview = () => (
                 style={style.overview__container__buttoncontainer_button}
                 icon={<i className={"fal fa-search"} />}
                 content={`What's new in Lychee Slicer 3`}
+                link={`#`}
             />
         </div>
         <div className={style.overview__divider} />
