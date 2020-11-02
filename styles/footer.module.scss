@@ -103,13 +103,12 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            text-align: left;
+            text-align: center;
             border-top: solid 2px #edb059;
             animation-name: burgerOpen;
             animation-duration: 1s;
             overflow: hidden;
             li{
-                padding-left: 10%;
                 padding-top: 15px;
                 padding-bottom: 15px;
                 a{
@@ -145,13 +144,12 @@
                 list-style: none;
                 display: flex;
                 flex-direction: column;
-                text-align: left;
+                text-align: center;
                 border-top: none;
                 animation-name: burgerClose;
                 animation-duration: 1s;
                 overflow: hidden;
                 li{
-                    padding-left: 10%;
                     padding-top: 15px;
                     padding-bottom: 15px;
                     a{

@@ -1,4 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+@keyframes hoverlink{
+    from{
+        opacity: 0;
+        margin-left: 0px;
+        overflow: hidden;
+    }
+    to{
+        overflow: hidden;
+        opacity: 1;
+        margin-left: 15px;
+    }
+}
 
 .container{
     background-color: white;
@@ -14,6 +28,7 @@
     background-image: url("../public/all_printers_lychee.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     margin-top: 80px;
     padding-top: 32px;
     padding-bottom: 39px;
@@ -26,17 +41,79 @@
         margin-top: 20px;
         max-width: 100%;
         max-height: 140px;
-        margin-bottom: 10px;
     }
     h1{
+        margin-block-start: 0;
+        line-height: 1.3em;
         font-size: 63px;
         font-weight: 500;
         padding-bottom: 10px;
-        margin-top: 15px;
     }
     h2{
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
         font-size: 23px;
         margin-top: 60px;
         font-weight: 500;
+        line-height: 1em;
     }
+    &__buttonscontainer{
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: auto;
+        font-family: "Open Sans",Arial, sans-serif;
+        padding-top: 19px;
+        padding-bottom: 20px;
+        font-weight: 500;
+        font-size: 20px;
+        width: 80%;
+        :first-child{
+            margin-right: 5.5%;
+            justify-content: flex-end;
+        }
+        :last-child{
+            margin-right: 0;
+        }
+        &__buttoncontainer{
+            margin-bottom: 25px;
+            display: block;
+            line-height: 1.7em;
+            width: 100%;
+            &_button{
+                margin-right: 0;
+                line-height: 1.7em;
+                text-transform: none;
+                text-decoration: none;
+                color: white;
+                padding: .3em 1em;
+                background-color: #d1515c;
+                border-radius: 3px;
+                transition: .5s;
+                &:hover::after{
+                    animation-name: hoverlink;
+                    animation-duration: 1s;
+                    width: 100%;
+                    opacity: 1;
+                    margin-left: 15px;
+                    font-family: "Font Awesome 5 Pro";
+                    font-weight: 400;
+                    content: "\f138";
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) {
+.top{
+    background-size: cover;
+    &__buttonscontainer{
+        display: inline-flex;
+        &__buttoncontainer{
+            display: flex;
+            margin-bottom: 0;
+        }
+    }
+}
 }
