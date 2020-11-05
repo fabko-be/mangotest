@@ -37,5 +37,17 @@
     "hooks": {
       "pre-commit": "npx lint-staged"
     }
-  }
+  },
+  "description": "Premièrement, faire l'installation des modules nécessaires.",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabko-be/mangotest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabko-be/mangotest/issues"
+  },
+  "homepage": "https://github.com/fabko-be/mangotest#readme"
 }
